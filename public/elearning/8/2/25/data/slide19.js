@@ -1,0 +1,3 @@
+(function(){var loadHandler=window['sl_{CD9E31E2-77CC-429B-98EA-32A2F958499A}'];loadHandler&&loadHandler(18, '<div id="spr0_bd3d5"><div id="spr1_bd3d5" class="kern slide"><img id="img2_bd3d5" src="data/img4.png" width="1280px" height="720px" alt="" style="left:0px;top:0px;"/></div><div id="spr2_bd3d5" class="kern slide"><div id="spr3_bd3d5" style="left:401.25px;top:159px;"><img id="img0_bd3d5" src="data/img30.png" width="506.25" height="89.25" alt="HOẠT ĐỘNG 3"/></div><div id="spr4_bd3d5" style="left:282px;top:271.5px;"><img id="img1_bd3d5" src="data/img31.png" width="732.75" height="174.75" alt="Hà Nội – trung tâm chính trị,\
+văn hóa, khoa học, kinh tế lớn \
+của cả nước"/></div></div></div>', '{"s":[]}');})();

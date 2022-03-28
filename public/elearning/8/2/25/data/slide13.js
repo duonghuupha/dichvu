@@ -1,0 +1,3 @@
+(function(){var loadHandler=window['sl_{CD9E31E2-77CC-429B-98EA-32A2F958499A}'];loadHandler&&loadHandler(12, '<div id="spr0_ba7d3"><div id="spr1_ba7d3" class="kern slide"><img id="img2_ba7d3" src="data/img4.png" width="1280px" height="720px" alt="" style="left:0px;top:0px;"/></div><div id="spr2_ba7d3" class="kern slide"><div id="spr3_ba7d3" style="left:399.75px;top:148.5px;"><img id="img0_ba7d3" src="data/img18.png" width="507.75" height="89.25" alt="HOẠT ĐỘNG 2"/></div><div id="spr4_ba7d3" style="left:315.75px;top:265.5px;"><img id="img1_ba7d3" src="data/img19.png" width="677.25" height="205.5" alt="Tìm hiểu về sự hình hành\
+và phát triển của thủ đô \
+Hà Nội"/></div></div></div>', '{"s":[]}');})();

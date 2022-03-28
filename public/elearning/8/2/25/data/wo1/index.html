@@ -1,0 +1,301 @@
+ 
+<html>
+<head>
+	<meta charset="utf-8">
+	<script type="text/javascript" src="booklet/jquery.min.js"></script>
+	<script src="booklet/jquery.easing.1.3.js" type="text/javascript"></script>
+	<script src="booklet/jquery.booklet.1.1.0.min.js" type="text/javascript"></script>
+	<link href="booklet/jquery.booklet.1.1.0.css" type="text/css" rel="stylesheet" media="screen" />
+	<style>
+		*{
+			margin:0;
+			padding:0;
+		}
+		body{
+			background:#eba426;	
+			color:#444;
+			font-size:12px;
+			color: #333;
+		    font-family: sans-serif;
+		}
+		 
+		 
+		.booklet           {
+			width:900px;
+			height:607px;
+			position:relative;
+			margin:0 auto 10px;
+			-moz-box-shadow:0px 0px 1px #fff;
+			-webkit-box-shadow:0px 0px 1px #fff;
+			box-shadow:0px 0px 1px #fff;
+			-moz-border-radius:10px;
+			-webkit-border-radius:10px;
+			border-radius:10px;
+		}
+		.booklet .b-wrap-left  {
+			background:#fff url(images/left_bg.jpg) no-repeat top left;
+			-webkit-border-top-left-radius: 10px;
+			-webkit-border-bottom-left-radius: 10px;
+			-moz-border-radius-topleft:10px;
+			-moz-border-radius-bottomleft: 10px;
+			border-top-left-radius: 10px;
+			border-bottom-left-radius: 10px;
+		}
+		.booklet .b-wrap-right {
+			background:#efefef url(images/right_bg.jpg) no-repeat top left;
+			-webkit-border-top-right-radius: 10px;
+			-webkit-border-bottom-right-radius: 10px;
+			-moz-border-radius-topright: 10px;
+			-moz-border-radius-bottomright: 10px;
+			border-top-right-radius: 10px;
+			border-bottom-right-radius: 10px;
+		}
+		.booklet .b-counter {
+			bottom:10px;
+			position:absolute;
+			display:block;
+			width:90%;
+			height:20px;
+			border-top:1px solid #ddd;
+			color:#222;
+			text-align:center;
+			font-size:12px;
+			padding:5px 0 0;
+			background:transparent;
+			-moz-box-shadow:0px -1px 1px #fff;
+			-webkit-box-shadow:0px -1px 1px #fff;
+			box-shadow:0px -1px 1px #fff;
+			opacity:0.8;
+		}
+		.book_wrapper{
+			margin:0 auto;
+			width:905px;
+			height:540px;
+			position:relative;
+		}
+		.book_wrapper h1{
+			color:orange;
+			margin:5px 5px 5px 15px;
+			font-size:17px;
+			background:transparent url(images/h1.png) no-repeat bottom left;
+			padding-bottom:7px;
+		    text-transform: uppercase;
+		    font-weight: 700;
+		}
+		.book_wrapper p{
+			font-size:15px;
+			line-height: 1.5em;
+			margin:5px 5px 5px 15px;
+			text-align: justify;
+		}
+		.book_wrapper a.article,
+		.book_wrapper a.demo{
+			background:transparent url(images/circle.png) no-repeat 50% 0px;
+			display:block;
+			width:95px;
+			height:41px;
+			text-decoration:none;
+			outline:none;
+			font-size:16px;
+			color:#555;
+			float:left;
+			line-height:41px;
+			padding-left:47px;
+		}
+		.book_wrapper a.demo{
+			margin-left:50px;
+		}
+		.book_wrapper a.article:hover,
+		.book_wrapper a.demo:hover{
+			background-position:50% -41px;
+			color:#13386a;
+		}
+		.book_wrapper img{
+			margin:10px 0px 5px 35px;
+			width:300px;
+			padding:4px;
+			border:1px solid #ddd;
+			-moz-box-shadow:1px 1px 1px #fff;
+			-webkit-box-shadow:1px 1px 1px #fff;
+			box-shadow:1px 1px 1px #fff;
+		}
+		.booklet .b-wrap-right img{
+			border:1px solid #E6E3C2;
+		}
+		a#next_page_button,
+		a#prev_page_button{
+			display:none;
+			position:absolute;
+			width:41px;
+			height:40px;
+			cursor:pointer;
+			margin-top:-20px;
+			top:50%;
+			background:transparent url(images/buttons.png) no-repeat 0px -40px;
+		}
+		a#prev_page_button{
+			left:-30px;
+		}
+		a#next_page_button{
+			right:-30px;
+			background-position:-41px -40px;
+		}
+		a#next_page_button:hover{
+			background-position:-41px 0px;
+		}
+		a#prev_page_button:hover{
+			background-position:0px 0px;
+		}
+        </style>
+		 
+</head>
+<body>
+	<div class="book_wrapper">
+		<div id="mybook" style="display:none;">
+			<div class="b-load">
+				<div style="text-align: center;">
+					<h1>Từ điển các danh lam thắng cảnh, di tích của thủ đô Hà Nội</h1>
+					<p>Với mục đích giúp các em phần nào trong việc tìm kiếm thông tin về những DANH LAM THẮNG CẢNH cũng như các khu DI TÍCH của Hà Nội.Cô Nguyễn Thùy Linh đã tổng hợp nên danh sách những danh lam thắng cảnh và các di tích lịch sử của thủ đô Hà Nội cho các em có thể tham khảo thêm. Những danh lam thắng cảnh, di tích lịch sử như Văn Miếu - Quốc tử giám, Nhà Hát Lớn, Chùa Một Cột, Lăng Chủ Tịch Hồ Chí Minh,  .....</p>
+				</div>
+				<div>
+					<img src="images/1.jpg" alt="" />
+					<h1>Lăng Bác</h1>
+					<p>Lăng Bác hay còn gọi là Lăng Chủ tịch Hồ Chí Minh là nơi đặt thi hài của Bác Hồ để người dân cả nước và khách quốc tế có thể tới viếng thăm vị cha già kính yêu. Không chỉ là nơi an nghỉ của vị lãnh tụ vĩ đại của dân tộc Việt Nam. Toàn bộ cảnh quan trong khu vực chính là nơi hội tụ những tinh hoa về kiến trúc và không gian văn hóa của thủ đô Hà Nội ngàn năm văn hiến.</p>
+				</div>
+				<div>
+					<img src="images/2.jpg" alt="" />
+					<h1>Chùa Một Cột </h1>
+					<p>Chùa Một Cột là một trong những ngôi chùa nổi tiếng, được nhắc đến nhiều trong lịch sử Việt Nam. Đây là một công trình kiến trúc xuất sắc thể hiện tính dân tộc đậm nét. Kiến trúc của chùa độc đáo có “một không hai”. Chùa được tạo hình giống như một đóa hoa sen nở trên mặt nước. Loài hoa tượng trưng cho sự tinh khiết và cao quý của Phật pháp. Vì vậy dân gian vẫn gọi chùa Một Cột là Liên Hoa Đài.</p>
+				</div>
+				<div>
+					<img src="images/3.jpg" alt="" />
+					<h1>Văn Miếu – Quốc Tử Giám</h1>
+					<p>Văn Miếu – Quốc Tử Giám là một khu di tích lịch sử mang ý nghĩa biểu trưng cho tiến trình phát triển văn hóa của Việt Nam. Gồm hai di tích: Văn Miếu thờ Khổng Tử, các bậc hiền triết Nho giáo và Tư nghiệp Quốc Tử Giám Chu Văn An – người thầy tiêu biểu đạo cao, đức trọng của nền giáo dục Việt Nam; Quốc Tử Giám – Trường Đại học đầu tiên của Việt Nam. Hiện nay, vẫn có nhiều du khách tới tham quan và gửi gắm mong ước cho sự học của mình.</p>
+				</div>
+				<div>
+					<img src="images/4.jpg" alt="" />
+					<h1>Hoàng thành Thăng Long </h1>
+					<p style="font-size:13px;">Hoàng thành Thăng Long là quần thể di tích gắn với lịch sử kinh thành Thăng Long Hà Nội. Công trình kiến trúc đồ sộ này được các triều vua xây dựng trong nhiều giai đoạn lịch sử và trở thành di tích quan trọng bậc nhất trong hệ thống các di tích Việt Nam. Không kỳ vĩ lớn lao, không đẹp đẽ rực rỡ, song di sản Hoàng Thành Thăng Long có một giá trị đặc biệt mà những di sản khác ở Việt Nam không có. Đó là giá trị văn hoá lịch sử của chiều dài ngàn năm. Địa điểm: 19C Hoàng Diệu, Quán Thánh, Ba Đình, Hà Nội</p>
+				</div>
+				<div>
+					<img src="images/5.jpg" alt="" />
+					<h1>Nhà hát lớn</h1>
+					<p>Nhà hát mang nhiều dấu ấn lịch sử tại trung tâm thủ đô Hà Nội. Nơi này là địa điểm tổ chức những chương trình nghệ thuật lớn của nhiều ca nhạc sĩ, nghệ sĩ tên tuổi hàng đầu Việt Nam. Đây là nơi tổ chức cả các chương trình nhạc kịch opera Pháp và Ý cổ điển lẫn những vở kịch Việt Nam. Nhà hát có giá trị lịch sử, kiến trúc rất quan trọng trong đời sống văn hóa của người dân thủ đô. Địa điểm: Số 01 Tràng Tiền, Phan Chu Trinh, Hoàn Kiếm, Hà Nội</p>
+				</div>
+				<div>
+					<img src="images/6.jpg" alt="" />
+					<h1>Bảo tàng dân tộc học Việt Nam</h1>
+					<p style="font-size:13px;">Bảo tàng dân tộc học Việt Nam là nơi lưu giữ tất cả các giá trị văn hóa, công trình nhà ở, phong tục tập quán, nghi thức truyền thống của các dân tộc Việt Nam. Nơi này gồm 2 khu trưng bày: ngoài trời và trong nhà. Sự đa dạng và độc đáo trong các khu trưng bày thực sự hấp dẫn bất kì du khách nào khi ghé thăm. Đây là cơ hội cho bạn những trải nghiệm vô cùng ý nghĩa về đời sống vật chất và tinh thần của các dân tộc Việt Nam. Địa điểm: Số 1 Nguyễn Văn Huyên, Quan Hoa, Cầu Giấy, Hà Nội</p>
+				</div>
+				<div>
+					<img src="images/7.jpg" alt="" />
+					<h1>Nhà thờ Lớn Hà Nội</h1>
+					<p>Nhà thờ Lớn Hà Nội là một trong những công trình Thiên chúa giáo được xây dựng sớm nhất ở Hà Nội. Nơi đây mang đậm nét đặc trưng của kiến trúc Gothic châu Âu với bức tường xây cao, có mái vòm và nhiều cửa sổ. Ngoài ra còn có sự giao thoa với phương Ðông, giữa văn hóa Thiên chúa giáo và Phật giáo. Địa điểm: 40 Nhà Chung, Hàng Trống, Hoàn Kiếm, Hà Nội</p>
+				</div>
+				<div>
+					<img src="images/8.jpg" alt="" />
+					<h1>Việt phủ Thành Chương</h1>
+					<p>Việt phủ Thành Chương là một tổ hợp của các công trình kiến trúc cổ và giả cổ do hoạ sĩ Thành Chương xây dựng. Nhằm tôn vinh các di sản kiến trúc truyền thống của Việt Nam. Tới đây, bạn sẽ được chiêm ngưỡng nét đẹp tổng thể về làng quê bắc bộ Việt Nam có từ hàng trăm năm trước. Đặc biệt, với quần thể kiến trúc pha chút hiện đại cùng vạn hiện vật văn hóa lịch sử từ triều Đinh, Lý, Trần, Lê… Địa điểm: Hiền Ninh, Sóc Sơn, Hà Nội</p>
+				</div>
+				<div>
+					<img src="images/9.jpg" alt="" />
+					<h1>Đền Quán Thánh </h1>
+					<p>Đền Quán Thánh được xây dựng vào thế kỷ thứ 11 là nơi thờ thần Huyền Thiên Trấn Vũ – vị thần bảo vệ hướng Bắc của kinh thành Thăng Long xưa. Trải qua nhiều lần trùng tu, đây vẫn là một quần thể kiến trúc độc đáo đánh dấu tài nghệ chế tạo của những nghệ nhân Việt Nam. Ngày nay, đền vẫn là một trong những địa điểm du lịch tâm linh ấn tượng nhất của Hà Nội. Địa điểm: Thanh Niên, Quán Thánh, Ba Đình, Hà Nội</p>
+				</div>
+				<div>
+					<img src="images/10.jpg" alt="" />
+					<h1>Đền Kim Liên </h1>
+					<p style="font-size:13px;">Đền Kim Liên thuộc 1 trong “Thăng Long tứ trấn” của kinh thành Thăng Long xưa. Nơi đây không chỉ nổi tiếng với truyền thuyết về vị thần Cao Sơn mà nó còn nổi tiếng về lối kiến trúc xưa mang đậm bản sắc của dân tộc Việt Nam. Ngày nay lễ hội đền Kim Liên được tổ chức vào 2 ngày là 15 và 16 tháng 3 âm lịch hàng năm, ngày 16 là ngày hội chính. Mọi người có thể đến tham quan vào những ngày nay để được tận hưởng không khí lễ hội nơi đây. Địa điểm: Ki ốt số 87 Đào Duy Anh, Phương Liên, Đống Đa, Hà Nội</p>
+				</div>
+				<div>
+					<img src="images/11.jpg" alt="" />
+					<h1>Chùa Trấn Quốc</h1>
+					<p style="font-size:12px;">Chùa Trấn Quốc được coi là một trong những ngôi chùa cổ nhất Việt Nam với hơn 1500 tuổi. Chùa nổi tiếng không chỉ bởi vẻ đẹp cổ kính mà còn bởi không gian thoáng mát tươi xanh. Tất cả đã tạo nên một tổng thể kiến trúc, lịch sử văn hóa và thiên nhiên hoàn hảo. Nằm trong không gian cảnh quan Hồ Tây, từ xa nhìn lại ngôi chùa trông giống như đóa sen đang nở. Vào mỗi mùa, đến đây du khách lại được cảm nhận những vẻ đẹp khác nhau của chốn thiền môn. Địa điểm: Thanh Niên, Yên Phụ, Tây Hồ, Hà Nội</p>
+				</div>
+				<div>
+					<img src="images/12.jpg" alt="" />
+					<h1>Nhà tù Hỏa Lò</h1>
+					<p>Nhà tù Hỏa Lò là di tích lịch sử nổi tiếng và không thể bỏ qua khi đến với Hà Nội. Hỏa Lò là nơi giam giữ, đày ải về thể xác, tinh thần của hàng ngàn chiến sĩ yêu nước, cách mạng Việt Nam. Tại di tích lịch sử nhà tù Hỏa Lò, hiện đang trưng bày nhiều tài liệu, hiện vật quý phản ánh cuộc sống của tù chính trị Việt Nam dưới chế độ thực dân Pháp. Địa điểm: 1 Hoả Lò, Trần Hưng Đạo, Hoàn Kiếm, Hà Nội</p>
+				</div>
+				<div>
+					<img src="images/13.jpg" alt="" />
+					<h1>Cầu Long Biên</h1>
+					<p style="font-size:13px;">Cầu Long Biên là cây cầu thép đầu tiên nằm bắc ngang qua sông Hồng. Nối hai quận Long Biên và Hoàn Kiếm của thành phố Hà Nội. Bên cạnh đó, cây cầu còn được xem là một chứng tích lịch sử quan trọng đã chứng kiến những thăng trầm của Hà Nội qua cuộc kháng chiến chống Pháp và Mỹ. Hiện nay, cầu Long Biên chỉ dành cho đường sắt, đường xe thô sơ và đường bộ. Vì vẻ đẹp cổ kính mà các bạn trẻ thường tới đây chụp hình sống ảo. Địa điểm: Ngọc Thụy, Long Biên, Hà Nội</p>
+				</div>
+				<div>
+					<img src="images/14.jpg" alt="" />
+					<h1>Chợ Đồng Xuân</h1>
+					<p>Chợ Đồng Xuân là đầu mối cung cấp và phân phối gần như tất cả các mặt hàng. Từ quần áo, giày dép, cho đến túi xách, mỹ phẩm. Tuy nhiên nơi đây chỉ thích hợp cho khách mua buôn, không phù hợp nếu như có ý định mua lẻ. Sự đa dạng không chỉ về các loại mặt hàng mà có phù hợp với nhiều lứa tuối. Cũng có những mặt hàng được bán ở chợ Đồng Xuân mà sẽ rất khó để được ở các khu chợ bán lẻ khác. Địa điểm: Đồng Xuân, Hoàn Kiếm, Hà Nội</p>
+				</div>
+				<div>
+					<img src="images/15.jpg" alt="" />
+					<h1>Tháp nước Hàng Đậu</h1>
+					<p style="font-size:13px;">Tháp nước Hàng Đậu được xây dựng năm 1894. Gồm 3 tầng, hình trụ tròn có đường kính 19m, cao 25m, mái tôn hình chóp nón. Đây là nơi chứa, phân phối nước cho các khu phố trong thành Hà Nội nhưng bị bỏ không từ năm 1954. Trải qua suốt chặng đường dài của lịch sử, tháp nước vẫn ở đó và trở thành điểm check-in của nhiều người. Địa điểm: Quán Thánh, Hoàn Kiếm, Hà Nội</p>
+				</div>
+				<div>
+					<img src="images/16.jpg" alt="" />
+					<h1>Cung Văn hóa Lao động Hữu nghị Việt Xô</h1>
+					<p style="font-size:13px;">Cung Văn hóa Lao động Hữu nghị Việt Xô là quà tặng của Hội đồng Trung ương các công đoàn Liên Xô cũ dành cho Việt Nam. Kiến trúc của công trình mang dáng dấp một nhà hát của Liên Xô. Cung văn hóa gồm ba khối nhà chính: nhà biểu diễn, nhà học tập, nhà kỹ thuật. Nơi này có nhiều phòng hoạt động lớn nhỏ khác nhau phù hợp với các dạng hoạt động và quy mô hoạt động như: biểu diễn nghệ thuật, tổ chức hội nghị, hội thảo… Địa điểm: 91 Trần Hưng Đạo, Hoàn Kiếm, Hà Nội</p>
+				</div>
+				<div>
+					<img src="images/17.jpg" alt="" />
+					<h1>Công viên Lê Nin</h1>
+					<p>Công viên Lê Nin là một khu đất hình tam giác cửa chính trên Đường Điện Biên Phủ. Hai cạnh là đường Trần Phú và Lê Hồng Phong. Tượng đài Lê Nin nhìn ra Đường Điện Biên Phủ hướng phía Cột cờ Hà Nội. Xung quanh cây cối rậm rạp rất mát mẻ. Đây là không gian xanh mang đậm dấu ấn lịch sử của thủ đô. Địa điểm: 28A Điện Biên Phủ, Điện Bàn, Ba Đình, Hà Nội</p>
+				</div>
+				<div>
+					<img src="images/18.jpg" alt="" />
+					<h1>Làng cổ Đường Lâm</h1>
+					<p>- Làng cổ Đường Lâm với nhiều nét đẹp xưa là điểm du lịch văn hóa vô cùng hấp dẫn. Ngôi làng quy tụ rất nhiều nét đẹp của một ngôi làng Việt với cổng làng, đình làng, cây đa sân đình, giếng làng, đền chùa… cùng những ngôi nhà bằng đá tổ ong, mái gạch nung mang đậm nét kiến trúc phong kiến xưa. Làng khá rộng nếu có thời gian nhiều thì cuốc bộ tham quan từng ngóc ngách sẽ thích hơn. Còn nếu lười bạn có thể thuê xe đạp và xe máy đi cho tiện. Địa điểm: Đường Lâm, Sơn Tây, Hà Nội</p>
+				</div>
+				<div>
+					<img src="images/19.jpg" alt="" />
+					<h1>Làng gốm Bát Tràng</h1>
+					<p>Làng gốm Bát Tràng: Đây là làng nghề truyền thống nổi tiếng về các sản phầm bằng gốm sứ. Gốm Bát Tràng được đánh giá cao về chất lượng, có nhiều kiểu dáng, màu sắc. Làng gốm Bát Tràng không chỉ là nơi làm nên một thương hiệu sản phẩm, mà còn góp phần gìn giữ giá trị văn hoá của thủ đô. Đây sẽ là một trải nghiệm thú vị ngày cuối tuần cho bạn nào muốn thư giãn. Địa điểm: Bát Tràng, Gia Lâm, Hà Nội</p>
+				</div>
+				<div>
+					<img src="images/20.jpg" alt="" />
+					<h1>Núi Trầm</h1>
+					<p>Núi Trầm: Khám phá vẻ đẹp núi Trầm là một trải nghiệm không thể thiếu khi đến Hà Nội. Ở đây có rất nhiều địa danh nổi tiếng mà bạn không thể bỏ qua như: chùa Trầm, động Long Tiên. Nhìn chung ngọn núi không quá cao nên leo lên không phải tốn nhiều thể lực. Lên đến đỉnh núi, bạn sẽ thấy thật tuyệt vời khi được chiêm ngưỡng quang cảnh bên dưới. Địa điểm: Phụng Châu, Chương Mỹ, Hà Nội</p>
+				</div>
+			</div>
+		</div>
+	</div>
+        
+<script type="text/javascript">
+	$(function() {
+		var $mybook 		= $('#mybook');
+		var $bttn_next		= $('#next_page_button');
+		var $bttn_prev		= $('#prev_page_button');
+		var $loading		= $('#loading');
+		var $mybook_images	= $mybook.find('img');
+		var cnt_images		= $mybook_images.length;
+		var loaded			= 0;
+		$mybook_images.each(function(){
+			var $img 	= $(this);
+			var source	= $img.attr('src');
+			$('<img/>').load(function(){
+				++loaded;
+				if(loaded == cnt_images){
+					$loading.hide();
+					$bttn_next.hide();
+					$bttn_prev.hide();
+					$mybook.show().booklet({
+						name:               null,                            //  
+						width:              800,                             //  
+						height:             500,                             //   
+						speed:              600,                             //  
+						direction:          'LTR', 
+						next:               $bttn_next,          			//  
+						prev:               $bttn_prev,                 
+					});
+					Cufon.refresh();
+				}
+			}).attr('src',source);
+		});
+		
+	});
+</script>
+ 
+</body>
+ 
+</html>

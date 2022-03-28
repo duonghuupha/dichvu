@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nuoiduong_baoan>
+  <result id="1">
+    <name>Nguyễn Thị Mai Hương</name>
+    <time>22:31:02 26-08-2021</time>
+    <anchinh>2</anchinh>
+    <coduong>0</coduong>
+    <khongduong>0</khongduong>
+  </result>
+  <result id="2">
+    <name>Nguyễn Thị Mai Hương</name>
+    <time>22:31:47 26-08-2021</time>
+    <anchinh>3</anchinh>
+    <coduong>0</coduong>
+    <khongduong>0</khongduong>
+  </result>
+</nuoiduong_baoan>

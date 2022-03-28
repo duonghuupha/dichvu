@@ -1,0 +1,141 @@
+.donxinhoc{
+    width:90%;
+    margin:0 auto;
+    overflow:hidden;
+}
+.donxinhoc .maso{
+    float:left;
+    width:100%;
+    text-align: right;
+    margin-bottom:10px;
+}
+.donxinhoc .tieungu{
+    float:left;
+    width:100%;
+    text-align: center;
+}
+.donxinhoc .tieungu span{
+    float:left;
+    width:100%;
+    line-height: 1.5em;
+    text-align: center;
+}
+.donxinhoc .tieungu .tennuoc{
+    text-transform: uppercase;
+    font-weight: 700;
+}
+.donxinhoc .tieungu .slogan{
+    font-weight: 700;
+    margin-bottom:20px;
+}
+.donxinhoc .tieungu hr{
+    border-top:1px solid black;
+    width:15%;
+    margin-bottom:20px;
+}
+.donxinhoc .tieude{
+    float:left;
+    width:100%;
+    margin-bottom:20px;
+}
+.donxinhoc .tieude span{
+    float:left;
+    width:100%;
+    line-height:2em;
+    text-align: center;
+    font-weight:700;
+}
+.donxinhoc .tieude .giaynhaphoc{
+    font-size:16px;
+    font-weight:700;
+    text-transform: uppercase;
+}
+.donxinhoc .noidung{
+    float:left;
+    width:100%;
+}
+.donxinhoc .noidung .so1{
+    float:left;
+    width:100%;
+}
+.donxinhoc .noidung .so1 .title, .donxinhoc .noidung .so2 .title, .donxinhoc .noidung .so3 .title,
+.donxinhoc .noidung .so4 .title, .donxinhoc .noidung .so5 .title, .donxinhoc .noidung .so6 .title,
+.donxinhoc .noidung .so7 .title{
+    float:left;
+    width:100%;
+    line-height:2em;
+}
+.donxinhoc .noidung .so1 .tenhocsinh b{
+    text-transform: uppercase;
+}
+.donxinhoc .noidung .so1 .so11 span{
+    float:left;
+    width:33.3%;
+}
+.donxinhoc .noidung .so1 .so12 span{
+    float:left;
+    width:50%;
+}
+.donxinhoc .noidung .so1 .so13 span:nth-child(1){
+    float:left;
+    width:40%;
+}
+.donxinhoc .noidung .so1 .so13 span:nth-child(2), .donxinhoc .noidung .so1 .so13 span:nth-child(3){
+    float:left;
+    width:30%;
+}
+.donxinhoc .noidung .so1 .so14 span:nth-child(1){
+    float:left;
+    width:60%;
+}
+.donxinhoc .noidung .so1 .so14 span:nth-child(2){
+    float:left;
+    width:40%;
+}
+.donxinhoc .noidung .so2 .so21 span, .so31 span, .so41 span, .so51 span{
+    float:left;
+    width:50%;
+}
+.donxinhoc .noidung .so2 .so22 span, .so32 span, .so42 span{
+    float:left;
+    width:33.3%;
+}
+.donxinhoc .noidung .so6 .title .so61{
+    float:left;
+    width:30%;
+}
+.donxinhoc .noidung .so6 .title .so62{
+    float:left;
+    width:18%;
+}
+.donxinhoc .noidung .so8{
+    float:left;
+    width:100%;
+    margin-top:20px;
+}
+.donxinhoc .noidung .so8 .nguoinhanhoso{
+    float:left;
+    width:50%;
+    text-align:center;
+}
+.donxinhoc .noidung .so8 .nguoinhanhoso span{
+    float:left;
+    width:100%;
+}
+.button{
+    float:left;
+    width:100%;
+    margin-top:50px;
+    margin-bottom:20px;
+    text-align:center;
+}
+.button .btn{
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}

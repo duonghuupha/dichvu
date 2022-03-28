@@ -1,0 +1,4 @@
+*Process attach.
+	INI File, Get Optional UnInstalled Err: 0X2
+	INI File, Get Language Monitor Err: 0X2
+*Process deattach.
