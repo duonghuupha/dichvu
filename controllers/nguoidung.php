@@ -20,8 +20,9 @@ class Nguoidung extends Controller{
     function content(){
         $rows = 15;
         $get_pages = isset($_REQUEST['page']) ? $_REQUEST['page'] : 1;
+        $keyword = isset($_REQUEST['q']) ? str_replace("$", " ", $_REQUEST['q']) : '';
         $offset = ($get_pages-1)*$rows;
-        $jsonObj = $this->model->getFetObj($this->_Info[0]['truonghoc_id'], $offset, $rows);
+        $jsonObj = $this->model->getFetObj($keyword, $this->_Info[0]['truonghoc_id'], $offset, $rows);
         $this->view->jsonObj = $jsonObj; $this->view->perpage = $rows; $this->view->page = $get_pages;
         $this->view->render('nguoidung/content');
     }

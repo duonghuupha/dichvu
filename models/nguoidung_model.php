@@ -4,12 +4,12 @@ class Nguoidung_Model extends Model{
         parent::__construct();
     }
 
-    function getFetObj($truonghocid, $offset, $rows){
+    function getFetObj($keyword, $truonghocid, $offset, $rows){
         $result = array();
         if($truonghocid == 0){
-            $where = "WHERE truonghoc_id = 0 OR is_boss = 1";
+            $where = "WHERE (fullname LIKE '%$keyword%' OR username LIKE '%$keyword%') AND (truonghoc_id = 0 OR is_boss = 1)";
         }else{
-            $where = "WHERE truonghoc_id = $truonghocid AND is_boss = 0";
+            $where = "WHERE truonghoc_id = $truonghocid AND is_boss = 0 AND (fullname LIKE '%$keyword%' OR username LIKE '%$keyword%')";
         }
         $query = $this->db->query("SELECT COUNT(*) AS Total FROM tbl_users $where");
         $row = $query->fetchAll();

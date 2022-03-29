@@ -1,8 +1,9 @@
+var page = 1; var tukhoa = '';
 $(function(){
     $('input[type="checkbox"].flat-red').iCheck({
         checkboxClass: 'icheckbox_flat-green'
     });
-    $('#noidung').load(baseUrl + '/nguoidung/content');
+    $('#noidung').load(baseUrl + '/nguoidung/content?page='+page+'&q='+tukhoa);
     $('#truonghoc_id').select2();
     if(truonghocid != 0){
         $('#truonghoc_id').load(baseUrl + '/other/combo_truonghoc?id='+truonghocid);
@@ -50,7 +51,8 @@ function del_nguoidung(idh){
 }
 
 function view_page_nguoidung(pages){
-    $('#noidung').load(baseUrl + '/nguoidung/content?page='+pages);
+    page = pages;
+    $('#noidung').load(baseUrl + '/nguoidung/content?page='+page+'&q='+tukhoa);
 }
 
 function phanquyen_nguoidung(idh){
@@ -93,4 +95,15 @@ function copy_roles(){
 
 function export_file(){
     window.location.href = baseUrl + '/nguoidung/export';
+}
+
+function search(){
+    var value = $('#table_search').val();
+    if(value.length != 0){
+        tukhoa = value.replaceAll(" ", "$", 'g');
+        $('#noidung').load(baseUrl + '/nguoidung/content?page='+page+'&q='+tukhoa);
+    }else{
+        keyword = '';
+        $('#noidung').load(baseUrl + '/nguoidung/content?page='+page+'&q='+tukhoa);
+    }
 }
