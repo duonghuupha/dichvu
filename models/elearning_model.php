@@ -12,12 +12,14 @@ class Elearning_Model extends Model{
             $where = " AND (user_id = $userid OR publish = 1)";
         }
         $query = $this->db->query("SELECT COUNT(*) AS Total FROM tbl_elearning WHERE truonghoc_id = $truonghocid
-                                    $where AND (linh_vuc LIKE '%$keyword%' OR de_tai LIKE '%$keyword%')");
+                                    $where AND (linh_vuc LIKE '%$keyword%' OR de_tai LIKE '%$keyword%' OR user_id IN (SELECT tbl_users.id
+                                    FROM tbl_users WHERE tbl_users.fullname LIKE '%$keyword%'))");
         $row = $query->fetchAll();
         $query = $this->db->query("SELECT id, truonghoc_id, exam_id, user_id, linh_vuc, de_tai, file, create_at, is_e, image, publish,
                                     (SELECT title FROM tbldm_exam WHERE tbldm_exam.id = exam_id) AS exam, (SELECT fullname FROM tbl_users
                                     WHERE tbl_users.id = user_id) AS tacgia FROM tbl_elearning
-                                    WHERE truonghoc_id = $truonghocid $where AND (linh_vuc LIKE '%$keyword%' OR de_tai LIKE '%$keyword%')
+                                    WHERE truonghoc_id = $truonghocid $where AND (linh_vuc LIKE '%$keyword%' OR de_tai LIKE '%$keyword%'
+                                    OR user_id IN (SELECT tbl_users.id FROM tbl_users WHERE tbl_users.fullname LIKE '%$keyword%'))
                                     ORDER BY id DESC LIMIT $offset, $rows");
         $result['total'] = $row[0]['Total'];
         $result['rows'] = $query->fetchAll();
