@@ -85,7 +85,7 @@ var str_url = '';
                             </div>
                             <div class="form-group">
                                 <textarea id="décription" class="form-control" style="height: 100px" placeholder="Mô tả bài viết"
-                                id="intro" name="intro" required></textarea>
+                                id="intro" name="intro"></textarea>
                             </div>
                             <div class="form-group">
                                 <textarea id="compose-textarea" class="form-control" style="height: 300px" placeholder="Tiêu đề bài viết"></textarea>
