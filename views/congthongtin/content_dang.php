@@ -6,11 +6,11 @@ $pages = $this->page;
     <thead>
         <tr>
             <th style="width: 10px">#</th>
-            <th>Hình ảnh</th>
+            <th class="text-center">Hình ảnh</th>
             <th>Tiêu đề</th>
-            <th>Danh mục</th>
-            <th>Cập nhật <br/>lần cuối</th>
-            <th>Người viết</th>
+            <th class="text-center">Danh mục</th>
+            <th class="text-center">Cập nhật <br/>lần cuối</th>
+            <th >Người viết</th>
         </tr>
     </thead>
     <tbody>
@@ -20,13 +20,13 @@ $pages = $this->page;
             $i++;
         ?>
         <tr>
-            <td><?php echo $i ?>.</td>
-            <td>
+            <td class="text-center"><?php echo $i ?>.</td>
+            <td class="text-center">
                 <?php
                 if($row['image'] != ''){
-                    echo '<img src="'.URL.'/public/news/'.$row['truonghoc_id'].'/'.$row['image'].'" width="70"/>';
+                    echo '<img src="'.URL.'/public/news/'.$row['truonghoc_id'].'/'.$row['image'].'" width="70" height="50"/>';
                 }else{
-                    echo "<i>Chưa có ảnh</i>";
+                    echo '<img src="'.URL.'/styles/no_image.jpg" width="70" height="50"/>';
                 }
                 ?>
             </td>
@@ -35,8 +35,8 @@ $pages = $this->page;
                     <?php echo $row['title'] ?>
                 </a>
             </td>
-            <td><?php echo $row['danhmuc'] ?></td>
-            <td><?php echo date("H:i:s d-m-Y", strtotime($row['create_at'])) ?></td>
+            <td class="text-center"><?php echo $row['danhmuc'] ?></td>
+            <td class="text-center"><?php echo date("H:i:s d-m-Y", strtotime($row['create_at'])) ?></td>
             <td><?php echo $row['nguoiviet'] ?></td>
         </tr>
         <?php
@@ -46,11 +46,11 @@ $pages = $this->page;
     <tfoot>
         <tr>
             <th style="width: 10px">#</th>
-            <th>Hình ảnh</th>
+            <th class="text-center">Hình ảnh</th>
             <th>Tiêu đề</th>
-            <th>Danh mục</th>
-            <th>Cập nhật <br/>lần cuối</th>
-            <th>Người viết</th>
+            <th class="text-center">Danh mục</th>
+            <th class="text-center">Cập nhật <br/>lần cuối</th>
+            <th >Người viết</th>
         </tr>
     </tfoot>
 </table>
