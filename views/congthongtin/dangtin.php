@@ -2,7 +2,7 @@
 <div class="content-wrapper">
     <section class="content-header">
         <h1>
-            Danh sách bài viết cần duyệt
+            Danh sách bài viết cần đăng
         </h1>
     </section>
     <section class="content">
