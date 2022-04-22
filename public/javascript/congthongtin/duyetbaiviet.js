@@ -1,3 +1,4 @@
+var data_hocsinh = [];
 $(function(){
     $('#baivietduyet').load(baseUrl + '/congthongtin/content_d');
     $('input[type="checkbox"].flat-red').iCheck({
@@ -36,5 +37,22 @@ function dang_bai_viet(idh){
         return false;
     }else{
         save_form('#fm_dang', baseUrl + '/congthongtin/update_dangtin?id='+idh);
+    }
+}
+
+function save_duyetbai(){
+    $(".ck_chuyenlop:checked").each(function() {
+        var idh = $('#ck_'+this.value).val();
+        data_hocsinh.push(idh);
+    });
+    var data = [];
+    $.each(data_hocsinh, function(i, el){
+        if($.inArray(el, data) === -1) data.push(el);
+    });
+    if(data.length > 0){
+        $('#data_baiviet').val(btoa(data.join(',')));
+        save_form_refresh_div_no_modal('#fm', baseUrl + '/congthongtin/duyet_all', '#baivietduyet', baseUrl + '/congthongtin/content_d');
+    }else{
+        toastr.error("Bạn chưa chọn bản ghi");
     }
 }

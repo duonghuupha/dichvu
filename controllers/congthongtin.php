@@ -291,6 +291,19 @@ class Congthongtin extends Controller{
         }
         $this->view->render("congthongtin/update_dangtin");
     }
+
+    function duyet_all(){
+        $data = base64_decode($_REQUEST['data_baiviet']);
+        $data = explode(",", $data);
+        foreach($data as $row){
+            $data = array('status' => 1);
+            $this->model->update_baiviet($row, $data);
+        }
+        $jsonObj['msg'] = "Duyệt bài thành công";
+        $jsonObj['success'] = true;
+        $this->view->jsonObj = json_encode($jsonObj);
+        $this->view->render("congthongtin/duyet_all");
+    }
     /**
      * cac ham lien quan den van ban cong thong tin dien tu
      **/

@@ -2,10 +2,35 @@
 $convert = new Convert(); $jsonObj = $this->jsonObj; $perpage = $this->perpage;
 $pages = $this->page;
 ?>
+<script>
+$(function(){
+    $('#ck_all').on('click',function(){
+        if(this.checked){
+            $('.ck_chuyenlop').each(function(){
+                this.checked = true;
+            });
+        }else{
+             $('.ck_chuyenlop').each(function(){
+                this.checked = false;
+            });
+        }
+    });
+    $('.ck_chuyenlop').on('click',function(){
+        if($('.ck_chuyenlop:checked').length == $('.ck_chuyenlop').length){
+            $('#ck_all').prop('checked',true);
+        }else{
+            $('#ck_all').prop('checked',false);
+        }
+    });
+});
+</script>
 <table id="example2" class="table table-bordered table-hover">
     <thead>
         <tr>
             <th class="text-center" style="width: 10px">#</th>
+            <th class="text-center" style="width: 10px">
+                <input id="ck_all" name="ck_all" type="checkbox" class="ck_all"/>
+            </th>
             <th class="text-center">Hình ảnh</th>
             <th class="text-center">Têu đề</th>
             <th class="text-center">Danh mục</th>
@@ -21,6 +46,10 @@ $pages = $this->page;
         ?>
         <tr>
             <td class="text-center"><?php echo $i ?>.</td>
+            <td class="text-center">
+                <input id="ck_<?php echo $row['id'] ?>" name="ck_<?php echo $row['id'] ?>"
+                type="checkbox" value="<?php echo $row['id'] ?>" class="ck_chuyenlop"/>
+            </td>
             <td class="text-center">
                 <?php
                 if($row['image'] != ''){

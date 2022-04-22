@@ -6,7 +6,7 @@ $(function(){
 });
 
 function view_page_baiviet_dang(pages){
-    $('#baivietdang').load(baseUrl + '/congthongtin/content_d?page='+pages);
+    $('#baivietdang').load(baseUrl + '/congthongtin/content_dang?page='+pages);
 }
 
 /*function duyet_bai_viet(idh){
